@@ -23,7 +23,7 @@ public class LoginPageTest extends TestBase {
 	public void LoginAsUserTest() {
 
 		loginPage = new LoginPage();
-		homePage = loginPage.loginAs("emp1");
+		homePage = loginPage.loginAs("emp3");
 
 		String Title = homePage.validateHomePageTitle();
 		Assert.assertEquals(Title, "CRMPRO");

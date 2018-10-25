@@ -4,10 +4,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.freecrm.qa.base.TestBase;
+import com.freecrm.qa.base.PageBase;
 import com.freecrm.qa.pages.LoginPage;
 
-public class SampleTest extends TestBase {
+public class DealsPageTest extends PageBase {
 
 	@BeforeMethod
 	public void setUp() {
@@ -15,7 +15,7 @@ public class SampleTest extends TestBase {
 	}
 
 	@Test
-	public void LoginAsUserTest() {
+	public void validateCreateDeal() {
 
 		LoginPage lp = new LoginPage();
 		lp.loginAs("emp2");

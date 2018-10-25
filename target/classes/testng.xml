@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FreeCRM Web Application Automation Suite">
+
+	<test name="FreeCRM Sample Tests">
+		<classes>
+		
+			<class name="com.freecrm.qa.testcases.SampleTest"></class>
+
+		</classes>
+	</test>
+	
+		<test name="FreeCRM Sanity Test">
+		<classes>
+		
+			<class name="com.freecrm.qa.testcases.LoginPageTest"></class>
+
+		</classes>
+	</test>
+	
+			<test name="FreeCRM Deals Feature">
+		<classes>
+		
+			<class name="com.freecrm.qa.testcases.LoginPageTest"></class>
+
+		</classes>
+	</test>
+</suite>

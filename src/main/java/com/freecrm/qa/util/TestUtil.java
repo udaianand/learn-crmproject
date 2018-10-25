@@ -11,7 +11,7 @@ public class TestUtil {
 
 	public static long PAGE_LOAD_TIMEOUT = 30;
 	public static long IMPLICITLY_WAIT = 20;
-	public static int TIME_OUT = 30; // as of now, used to pass as parameter in clickOn()
+	public static int TIME_OUT = 40; // as of now, used to pass as parameter in clickOn()
 	// public static String TESTDATA_SHEET_PATH =
 	// "D:\\Aanand\\Project\\Selenium_Workspace_Tutorial\\CRMProject\\src\\main\\java\\com\\freecrm\\qa\\testdata\\CRM_Contacts.xlsx";
 

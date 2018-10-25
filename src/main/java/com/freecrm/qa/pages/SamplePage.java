@@ -1,18 +1,15 @@
-package com.freecrm.qa.base;
+package com.freecrm.qa.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.freecrm.qa.pages.ContactsPage;
-import com.freecrm.qa.pages.DealsPage;
-import com.freecrm.qa.util.TestUtil;
+import com.freecrm.qa.base.PageBase;
 
-public class PageBase extends TestBase {
+public class SamplePage extends PageBase {
 
-	// Page factory or Obj repository
-	@FindBy(xpath = "//td[contains(text(),'User: UDAIANAND MANICKAM')]") // user is hardcoded.
-	WebElement userNameLabel;
+	// 1. Page factory or Object repository
 
 	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
 	WebElement contacts;
@@ -26,16 +23,12 @@ public class PageBase extends TestBase {
 	@FindBy(xpath = "//a[contains(text(),'Tasks')]")
 	WebElement tasks;
 
-	// // 2. Initializing page Objects
-	// public PageBase() {
-	// PageFactory.initElements(driver, this);
-	// }
-
-	public PageBase() {
-		// intialization();
+	// 2. Initializing page Objects
+	public SamplePage() {
 		PageFactory.initElements(driver, this);
-
 	}
+
+	// 3. Actions
 
 	public ContactsPage clickContacts() {
 		contacts.click();
@@ -44,10 +37,17 @@ public class PageBase extends TestBase {
 
 	}
 
-	public DealsPage clickDeals() {
-		TestUtil.clickOn(driver, deals, TestUtil.TIME_OUT);
-		return new DealsPage();
+	public AddContactPage clickOnNewContactLink() {
+		// TestUtil.switchToFrame();
+		Actions action = new Actions(driver);
+		action.moveToElement(contacts).build().perform();
+		newContactLink.click();
+		return new AddContactPage();
+	}
 
+	public DealsPage clickDeals() {
+		deals.click();
+		return new DealsPage();
 	}
 
 }
