@@ -41,9 +41,12 @@ public class HomePage extends PageBase {
 		return userNameLabel.isDisplayed();
 	}
 
+	// This method looks to be duplication of code. clickContactsLooks(). In Page
+	// class we have this code already. All the Menu bar actions (Click) need to be
+	// removed and placed in PageBase class file.
+
 	public ContactsPage clickContacts() {
-		contacts.click();
-		// TestUtil.clickOn(driver, Contacts, 20);
+		TestUtil.clickOn(driver, contacts, 20);
 		return new ContactsPage();
 
 	}

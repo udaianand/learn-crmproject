@@ -23,7 +23,7 @@ public class SamplePage extends PageBase {
 	@FindBy(xpath = "//a[contains(text(),'Tasks')]")
 	WebElement tasks;
 
-	// 2. Initializing page Objects
+	// 2. Initialize page objects
 	public SamplePage() {
 		PageFactory.initElements(driver, this);
 	}

@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [FreeCRM Web Application Automation Suite]">
-  <test thread-count="5" name="FreeCRM Sanity Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freecrm.qa.testcases.LoginPageTest">
+      <class name="com.freecrm.qa.testcases.AddContactPageTest">
         <methods>
-          <include name="loginTest"/>
-          <include name="LoginAsUserTest"/>
-          <include name="setUp"/>
           <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.freecrm.qa.testcases.LoginPageTest -->
-    </classes>
-  </test> <!-- FreeCRM Sanity Test(failed) -->
-  <test thread-count="5" name="FreeCRM Deals Feature(failed)">
-    <classes>
-      <class name="com.freecrm.qa.testcases.LoginPageTest">
-        <methods>
-          <include name="loginTest"/>
+          <include name="validateCreateNewContact"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.freecrm.qa.testcases.LoginPageTest -->
+      </class> <!-- com.freecrm.qa.testcases.AddContactPageTest -->
     </classes>
-  </test> <!-- FreeCRM Deals Feature(failed) -->
-</suite> <!-- Failed suite [FreeCRM Web Application Automation Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

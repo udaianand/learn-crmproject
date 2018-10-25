@@ -7,7 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TestUtil {
+import com.freecrm.qa.base.TestBase;
+
+public class TestUtil extends TestBase {
 
 	public static long PAGE_LOAD_TIMEOUT = 30;
 	public static long IMPLICITLY_WAIT = 20;
@@ -28,7 +30,6 @@ public class TestUtil {
 	}
 
 	public static void switchToFrame() {
-
+		driver.switchTo().frame("mainpanel");
 	}
-
 }

@@ -1,24 +1,27 @@
 package com.freecrm.qa.base;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.freecrm.qa.pages.AddContactPage;
 import com.freecrm.qa.pages.ContactsPage;
 import com.freecrm.qa.pages.DealsPage;
+import com.freecrm.qa.pages.TasksPage;
 import com.freecrm.qa.util.TestUtil;
 
 public class PageBase extends TestBase {
 
-	// Page factory or Obj repository
+	// 1. Page factory [or] Object Repository
 	@FindBy(xpath = "//td[contains(text(),'User: UDAIANAND MANICKAM')]") // user is hardcoded.
 	WebElement userNameLabel;
 
 	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
-	WebElement contacts;
+	protected WebElement contacts;
 
 	@FindBy(xpath = "//a[contains(text(),'New Contact')]")
-	WebElement newContactLink;
+	protected WebElement newContactLink;
 
 	@FindBy(xpath = "//a[contains(text(),'Deals')]")
 	WebElement deals;
@@ -26,28 +29,45 @@ public class PageBase extends TestBase {
 	@FindBy(xpath = "//a[contains(text(),'Tasks')]")
 	WebElement tasks;
 
-	// // 2. Initializing page Objects
-	// public PageBase() {
-	// PageFactory.initElements(driver, this);
-	// }
+	// 2. Initializing page Objects
 
 	public PageBase() {
-		// intialization();
 		PageFactory.initElements(driver, this);
 
 	}
 
+	/*
+	 * 3.Actions [Majority of the actions are Click Actions, that are used to
+	 * navigate from one page to another]
+	 */
+
 	public ContactsPage clickContacts() {
-		contacts.click();
-		// TestUtil.clickOn(driver, Contacts, 20);
+		TestUtil.switchToFrame();
+		TestUtil.clickOn(driver, contacts, 20);
 		return new ContactsPage();
 
 	}
 
 	public DealsPage clickDeals() {
-		TestUtil.clickOn(driver, deals, TestUtil.TIME_OUT);
+		TestUtil.switchToFrame();
+		TestUtil.clickOn(driver, deals, 20);
 		return new DealsPage();
 
+	}
+
+	public TasksPage clickTasks() {
+		TestUtil.switchToFrame();
+		TestUtil.clickOn(driver, tasks, TestUtil.TIME_OUT);
+		return new TasksPage();
+
+	}
+
+	public AddContactPage addNewContact() {
+		TestUtil.switchToFrame();
+		Actions action = new Actions(driver);
+		action.moveToElement(contacts).build().perform();
+		newContactLink.click();
+		return new AddContactPage();
 	}
 
 }
