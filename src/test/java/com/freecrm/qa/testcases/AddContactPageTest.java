@@ -10,6 +10,7 @@ import com.freecrm.qa.pages.AddContactPage;
 import com.freecrm.qa.pages.HomePage;
 import com.freecrm.qa.pages.IndividualContactDetailsPage;
 import com.freecrm.qa.pages.LoginPage;
+import com.freecrm.qa.util.Xls_Reader;
 
 public class AddContactPageTest extends PageBase {
 
@@ -32,16 +33,39 @@ public class AddContactPageTest extends PageBase {
 	@Test
 	public void validateCreateNewContact() {
 
-		addContactPage = homePage.addNewContact();
+		addContactPage = homePage.clickNewContact();
 		individualContactDetailsPage = addContactPage.createNewContact("Dr.", "Joseph", "Fernandez");
-
 		String str = individualContactDetailsPage.readIndividualContactName();
 		Assert.assertEquals(str, "Dr. Joseph Fernandez");
 	}
 
+	@Test
+	public void addMoreNewContacts() {
+
+		Xls_Reader reader = new Xls_Reader(
+				"D:\\Aanand\\Project\\Selenium_Workspace_Tutorial\\CRMProject\\src\\main\\java\\crm\\freecrm\\qa\\testData\\MasterData.xlsx");
+		int rowCount = reader.getRowCount("AddContact");
+		System.out.println("ExcelRownCount:::::" + rowCount);
+
+		for (int rowNum = 2; rowNum <= rowCount; rowNum++) {
+
+			String title = reader.getCellData("AddContact", "title", rowNum);
+			System.out.println(title);
+			String firstname = reader.getCellData("AddContact", "firstname", rowNum);
+			System.out.println(firstname);
+			String lastname = reader.getCellData("AddContact", "lastname", rowNum);
+			System.out.println(lastname);
+
+			addContactPage = homePage.clickNewContact();
+			individualContactDetailsPage = addContactPage.createNewContact(title, firstname, lastname);
+
+		}
+
+	}
+
 	@AfterMethod
 	public void tearDown() {
-		// driver.quit();
+		driver.quit();
 	}
 
 }

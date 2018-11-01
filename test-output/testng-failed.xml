@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freecrm.qa.testcases.AddContactPageTest">
+      <class name="com.freecrm.qa.thirdparty.ImportConceptWithAutoIT">
         <methods>
-          <include name="tearDown"/>
-          <include name="validateCreateNewContact"/>
           <include name="setUp"/>
+          <include name="importData"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.freecrm.qa.testcases.AddContactPageTest -->
+      </class> <!-- com.freecrm.qa.thirdparty.ImportConceptWithAutoIT -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

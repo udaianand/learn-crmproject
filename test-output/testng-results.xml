@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="31312" started-at="2018-10-25T09:01:35Z" finished-at="2018-10-25T09:02:07Z">
+  <suite name="Default suite" duration-ms="52069" started-at="2018-11-01T06:20:47Z" finished-at="2018-11-01T06:21:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="31312" started-at="2018-10-25T09:01:35Z" finished-at="2018-10-25T09:02:07Z">
-      <class name="com.freecrm.qa.testcases.AddContactPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.freecrm.qa.testcases.AddContactPageTest@66480dd7]" name="setUp" is-config="true" duration-ms="23752" started-at="2018-10-25T09:01:35Z" finished-at="2018-10-25T09:01:59Z">
+    <test name="Default test" duration-ms="52069" started-at="2018-11-01T06:20:47Z" finished-at="2018-11-01T06:21:39Z">
+      <class name="com.freecrm.qa.thirdparty.ImportByRobotClassInJavaAWT">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.freecrm.qa.thirdparty.ImportByRobotClassInJavaAWT@6c3708b3]" name="setUp" is-config="true" duration-ms="21132" started-at="2018-11-01T06:20:47Z" finished-at="2018-11-01T06:21:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validateCreateNewContact()[pri:0, instance:com.freecrm.qa.testcases.AddContactPageTest@66480dd7]" name="validateCreateNewContact" duration-ms="7505" started-at="2018-10-25T09:01:59Z" finished-at="2018-10-25T09:02:07Z">
+        <test-method status="PASS" signature="importData()[pri:0, instance:com.freecrm.qa.thirdparty.ImportByRobotClassInJavaAWT@6c3708b3]" name="importData" duration-ms="30839" started-at="2018-11-01T06:21:08Z" finished-at="2018-11-01T06:21:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateCreateNewContact -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.freecrm.qa.testcases.AddContactPageTest@66480dd7]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-10-25T09:02:07Z" finished-at="2018-10-25T09:02:07Z">
+        </test-method> <!-- importData -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.freecrm.qa.thirdparty.ImportByRobotClassInJavaAWT@6c3708b3]" name="tearDown" is-config="true" duration-ms="1" started-at="2018-11-01T06:21:39Z" finished-at="2018-11-01T06:21:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.freecrm.qa.testcases.AddContactPageTest -->
+      </class> <!-- com.freecrm.qa.thirdparty.ImportByRobotClassInJavaAWT -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

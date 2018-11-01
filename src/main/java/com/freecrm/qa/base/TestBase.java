@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.freecrm.qa.util.TestUtil;
 
@@ -41,10 +43,15 @@ public class TestBase {
 
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "D:\\Aanand\\Driver\\chromedriver.exe");
-			driver = new ChromeDriver();
-		} else if (browserName.equals("FF")) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("start-maximized");
+			options.addArguments("disable-infobars");
+			driver = new ChromeDriver(options);
+			// driver = new ChromeDriver();
+
+		} else if (browserName.equals("Firefox")) {
 			System.setProperty("webdriver.gecko.driver", "D:\\Aanand\\Driver\\geckodriver.exe");
-			driver = new ChromeDriver();
+			driver = new FirefoxDriver();
 		}
 
 		driver.manage().deleteAllCookies();

@@ -26,4 +26,11 @@ public class IndividualContactDetailsPage extends PageBase {
 		return str;
 
 	}
+
+	public String readContactTableData() {
+
+		String str = individualContactFullName.getText();
+		return str;
+
+	}
 }

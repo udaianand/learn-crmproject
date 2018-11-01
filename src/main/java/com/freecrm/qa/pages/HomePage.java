@@ -1,7 +1,6 @@
 package com.freecrm.qa.pages;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -37,31 +36,8 @@ public class HomePage extends PageBase {
 	}
 
 	public boolean verifyUserNameLabel() {
-		TestUtil.switchToFrame();
+		TestUtil.switchToMainFrame();
 		return userNameLabel.isDisplayed();
-	}
-
-	// This method looks to be duplication of code. clickContactsLooks(). In Page
-	// class we have this code already. All the Menu bar actions (Click) need to be
-	// removed and placed in PageBase class file.
-
-	public ContactsPage clickContacts() {
-		TestUtil.clickOn(driver, contacts, 20);
-		return new ContactsPage();
-
-	}
-
-	public AddContactPage clickOnNewContactLink() {
-		// TestUtil.switchToFrame();
-		Actions action = new Actions(driver);
-		action.moveToElement(contacts).build().perform();
-		newContactsLink.click();
-		return new AddContactPage();
-	}
-
-	public DealsPage clickDeals() {
-		deals.click();
-		return new DealsPage();
 	}
 
 }

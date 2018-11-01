@@ -30,7 +30,8 @@ public class LoginPage extends TestBase {
 	public HomePage login(String un, String pwd) throws InterruptedException {
 		username.sendKeys(un);
 		password.sendKeys(pwd);
-		TestUtil.clickOn(driver, loginBtn, TestUtil.TIME_OUT);
+		// TestUtil.clickOn(driver, loginBtn, TestUtil.TIME_OUT);
+		TestUtil.clickElementByJS(loginBtn, driver);
 		return new HomePage();
 	}
 
@@ -39,7 +40,8 @@ public class LoginPage extends TestBase {
 		String[] user = uc.loginAsUserRole(userRole);
 		username.sendKeys(user[0]);
 		password.sendKeys(user[1]);
-		TestUtil.clickOn(driver, loginBtn, TestUtil.TIME_OUT);
+		TestUtil.clickElementByJS(loginBtn, driver);
+		// TestUtil.clickOn(driver, loginBtn, TestUtil.TIME_OUT);
 		return new HomePage();
 	}
 
